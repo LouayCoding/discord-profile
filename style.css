@@ -8,33 +8,33 @@ body {
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+    background-image: url(./img/background.jpg)
+    /* background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%); */
 }
 
 .container {
     width: 500px;
-    height: 250px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    background-image: linear-gradient(to top, #e6e9f0ac 0%, #eef1f5cd 100%);
     border-radius: 12px;
-    box-shadow:
-        4.5px 4.5px 11.2px rgba(0, 0, 0, 0.024),
-        12.5px 12.5px 31.1px rgba(0, 0, 0, 0.035),
-        30.1px 30.1px 74.8px rgba(0, 0, 0, 0.046),
-        100px 100px 248px rgba(0, 0, 0, 0.07);
+    box-shadow: 10px 10px 270px 37px rgba(166,166,166,0.75);
+    -webkit-box-shadow: 10px 10px 270px 37px rgba(166,166,166,0.75);
+    -moz-box-shadow: 10px 10px 270px 37px rgba(166,166,166,0.75);
     overflow: visible;
 }
 
 .pfp {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-top: -90px;
+    width: 140px;
+    height: 140px;
+    margin-top: -100px;
     border: 2px solid;
     border-color: rgb(255, 255, 255);
     margin-bottom: 10px;
@@ -43,11 +43,32 @@ body {
 .name {
     font-weight: 900;
     font-size: 30px;
-    background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+    background-image: linear-gradient(to top, black 0%, black 100%);
     -webkit-background-clip: text; /* voor oudere versies van webkit browsers */
     background-clip: text;
     color: transparent;
     margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: fl;
+    background-color: rgba(0, 0, 0, 0.768);
+    border-radius: 12px;
+    padding: 8px;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.socials > svg {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-radius: 50px;
+    padding: 5px;
 }
 
 .icons {
@@ -55,14 +76,18 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    flex-direction: row;
-    box-shadow: rgba(106, 147, 200, 0.226) 4px 2px 2px 2px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.43);
+    padding: 2px;
+    box-shadow: 0px 0px 56px 2px rgba(232,232,232,0.75);
+-webkit-box-shadow: 0px 0px 56px 2px rgba(232,232,232,0.75);
+-moz-box-shadow: 0px 0px 56px 2px rgba(232,232,232,0.75);
 }
 
 .icon {
-    width: 35px;
-    padding: 5px;
+    width: 25px;
 }
+
 
 p {
     padding: 0;
@@ -71,3 +96,92 @@ p {
     text-align: center;
     font-weight: 500;
 }
+
+.player-container {
+    text-align: center;
+}
+
+.album-art {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+audio {
+    display: none;
+}
+
+.custom-audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.controls button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #45a049;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 10px;
+    background-color: #ddd;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rotate {
+    animation: spin 2s linear infinite; /* Adjust the animation duration as needed */
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
